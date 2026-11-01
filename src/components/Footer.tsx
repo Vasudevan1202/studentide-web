@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Download, ExternalLink, Mail } from "lucide-react";
+import Link from "next/link";
+import { Download, ExternalLink, Mail, User } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { PrivacyModal } from "./PrivacyModal";
 
@@ -86,6 +87,15 @@ export const Footer: React.FC = () => {
                   <a href="#about" className="hover:text-cyan-400 transition-colors">
                     About DeveloperHut
                   </a>
+                </li>
+                <li>
+                  <Link
+                    href="/founder"
+                    className="inline-flex items-center gap-1.5 text-cyan-300 hover:text-cyan-200 font-semibold transition-colors"
+                  >
+                    <User className="w-3.5 h-3.5" />
+                    <span>About the Founder (Vasu)</span>
+                  </Link>
                 </li>
               </ul>
             </div>

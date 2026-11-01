@@ -10,6 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/founder`,
+      lastModified: new Date('2026-11-01'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/#features`,
       lastModified: new Date('2026-11-01'),
       changeFrequency: 'monthly',

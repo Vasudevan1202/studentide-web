@@ -1,13 +1,13 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { 
   ExternalLink, 
   ShieldCheck, 
   Target,
   Compass,
-  Mail
+  Mail,
+  ArrowRight
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -105,6 +105,39 @@ export const About: React.FC = () => {
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 We present Student IDE exactly as built. We do not invent certifications, commercial awards, user counts, or fake testimonials. All advertised features are backed by real codebase tests and verified installers.
               </p>
+            </div>
+
+            {/* Founder Profile Card */}
+            <div className="rounded-2xl bg-gradient-to-r from-indigo-950/60 via-slate-900 to-cyan-950/40 border border-cyan-500/30 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-3.5">
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-slate-900 border border-slate-700 flex-shrink-0">
+                  <Image
+                    src="/founder/vasu.jpg"
+                    alt="Vasu (Vasudevan M) - Founder of DeveloperHut"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm font-bold text-white">Vasu (Vasudevan M)</p>
+                    <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                      Founder
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300">
+                    Class 12 &bull; Isha Vidhya &bull; Creator of Student IDE
+                  </p>
+                </div>
+              </div>
+
+              <Link
+                href="/founder"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-cyan-500 hover:bg-cyan-400 text-slate-950 shadow-md shadow-cyan-500/20 transition-all duration-200 flex-shrink-0"
+              >
+                <span>Read Founder Story</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
 
             <div className="rounded-2xl bg-gradient-to-r from-indigo-950/40 to-slate-900 border border-indigo-500/20 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">

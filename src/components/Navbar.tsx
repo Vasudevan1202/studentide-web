@@ -3,11 +3,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Download, Menu, X, ChevronRight } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Download, Menu, X, ChevronRight, User } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isFounderPage = pathname === "/founder";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,9 +20,14 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  interface NavItem {
+    name: string;
+    href: string;
+    isSpecial?: boolean;
+  }
+
+  const homeNavLinks: NavItem[] = [
     { name: "Home", href: "#top" },
-    { name: "Launch", href: "#countdown" },
     { name: "Features", href: "#features" },
     { name: "Languages", href: "#languages" },
     { name: "Curriculum", href: "#curriculum" },
@@ -27,7 +35,20 @@ export const Navbar: React.FC = () => {
     { name: "Download", href: "#download" },
     { name: "FAQ", href: "#faq" },
     { name: "About", href: "#about" },
+    { name: "Founder", href: "/founder", isSpecial: true },
   ];
+
+  const founderNavLinks: NavItem[] = [
+    { name: "Student IDE Home", href: "/" },
+    { name: "The Journey", href: "#story" },
+    { name: "Vision", href: "#vision" },
+    { name: "DeveloperHut", href: "#developerhut" },
+    { name: "Connect", href: "#connect" },
+    { name: "Features", href: "/#features" },
+    { name: "Download", href: "/#download" },
+  ];
+
+  const currentNavLinks: NavItem[] = isFounderPage ? founderNavLinks : homeNavLinks;
 
   return (
     <header
@@ -41,7 +62,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo & Name */}
           <Link
-            href="#top"
+            href={isFounderPage ? "/" : "#top"}
             className="flex items-center gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg p-1"
           >
             <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200">
@@ -72,22 +93,41 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
-              >
-                {link.name}
-              </a>
-            ))}
+          <nav className="hidden md:flex items-center gap-1 lg:gap-1.5">
+            {currentNavLinks.map((link) => {
+              if (link.href.startsWith("/")) {
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 flex items-center gap-1.5 ${
+                      link.isSpecial
+                        ? "text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500/20 shadow-sm"
+                        : "text-slate-300 hover:text-white hover:bg-white/5"
+                    }`}
+                  >
+                    {link.isSpecial && <User className="w-3.5 h-3.5 text-cyan-400" />}
+                    <span>{link.name}</span>
+                  </Link>
+                );
+              }
+
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                >
+                  {link.name}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Desktop Right Action */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="#download"
+              href={isFounderPage ? "/#download" : "#download"}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-md shadow-indigo-500/25 hover:shadow-cyan-500/20 transition-all duration-200 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
             >
               <Download className="w-4 h-4" />
@@ -113,21 +153,44 @@ export const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-[#0A0F1D]/98 border-b border-white/10 px-4 pt-3 pb-6 space-y-2 backdrop-blur-xl animate-in slide-in-from-top-4 duration-200">
           <div className="grid grid-cols-1 gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:text-cyan-300 hover:bg-white/5 transition-colors"
-              >
-                <span>{link.name}</span>
-                <ChevronRight className="w-4 h-4 text-slate-500" />
-              </a>
-            ))}
+            {currentNavLinks.map((link) => {
+              if (link.href.startsWith("/")) {
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center justify-between px-3.5 py-2.5 rounded-lg text-base font-medium transition-colors ${
+                      link.isSpecial
+                        ? "text-cyan-300 bg-cyan-500/10 border border-cyan-500/30"
+                        : "text-slate-200 hover:text-cyan-300 hover:bg-white/5"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2">
+                      {link.isSpecial && <User className="w-4 h-4 text-cyan-400" />}
+                      <span>{link.name}</span>
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-slate-500" />
+                  </Link>
+                );
+              }
+
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:text-cyan-300 hover:bg-white/5 transition-colors"
+                >
+                  <span>{link.name}</span>
+                  <ChevronRight className="w-4 h-4 text-slate-500" />
+                </a>
+              );
+            })}
           </div>
           <div className="pt-3 border-t border-white/10">
             <a
-              href="#download"
+              href={isFounderPage ? "/#download" : "#download"}
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-cyan-500 shadow-lg shadow-indigo-500/30"
             >

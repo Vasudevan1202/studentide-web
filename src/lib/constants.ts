@@ -76,6 +76,117 @@ export const SITE_CONFIG = {
   ],
 };
 
+export interface FounderPrinciple {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface FounderSocialLink {
+  name: string;
+  handle: string;
+  url: string;
+  label: string;
+  description: string;
+}
+
+export const FOUNDER_INFO = {
+  displayName: "Vasu",
+  fullName: "Vasudevan M",
+  role: "Founder of DeveloperHut",
+  product: "Creator of Student IDE",
+  education: "Class 12 Student, Isha Vidhya",
+  companyUrl: "https://www.developerhut.in/",
+  email: "founder@developerhut.in",
+  avatarSrc: "/founder/vasu.jpg",
+  logoSrc: "/branding/developerhut-logo.jpg",
+  mainIdentity: [
+    "STUDENT DEVELOPER",
+    "ENTREPRENEUR",
+    "TECHNOLOGY ENTHUSIAST",
+    "FOUNDER OF DEVELOPERHUT",
+    "CREATOR OF STUDENT IDE",
+  ],
+  quote:
+    "You don't need a degree to start building. You don't need expensive equipment. You just need curiosity, patience, and the willingness to learn from your mistakes. If you have an idea, start building it today. Technology is the most powerful tool you have to turn your imagination into reality.",
+  story: [
+    "Hi, I'm Vasu, a Class 12 student at Isha Vidhya and the founder of DeveloperHut.",
+    "My journey with technology started with pure curiosity. I wanted to understand how software works, how ideas turn into real tools, and how technology can solve real problems for people.",
+    "As a school student learning to code, I saw firsthand how overwhelming existing developer tools can be for beginners. Most IDEs are built for professionals with complex configurations, high system requirements, and an assumption that you already know what you're doing. In many schools and homes, especially across India, students don't always have high-end computers or reliable internet connections.",
+    "That observation led to an idea: What if there was a coding environment built specifically for students? Something fast, simple, completely offline, and ready to use without complicated setup.",
+    "That idea became Student IDE.",
+  ],
+  principles: [
+    {
+      title: "Explore Programming Without Complicated Setup",
+      description:
+        "No complex command lines, zero environment variables, and pre-bundled runtimes. Students start coding on day one with zero barrier to entry.",
+      icon: "Sparkles",
+    },
+    {
+      title: "Learn Different Coding Languages in One Place",
+      description:
+        "Seamlessly switch between Python, C++, HTML5, CSS3, JavaScript, SQL, and PHP without fragmented software or scattered setups.",
+      icon: "Boxes",
+    },
+    {
+      title: "Experiment With Ideas Freely and Safely",
+      description:
+        "Sandboxed browser previews, local file management, and instant process-tree killers keep experiments safe from computer freezes.",
+      icon: "ShieldCheck",
+    },
+    {
+      title: "Build Your First Projects With Confidence",
+      description:
+        "Grade-tailored templates for Classes 6 through 12 empower students to build real working scripts, web pages, and databases.",
+      icon: "Rocket",
+    },
+    {
+      title: "Develop Practical Technology Skills for the Future",
+      description:
+        "Real Monaco code editing engine, native MinGW C++17 compilation, and SQLite engines instill authentic developer fundamentals.",
+      icon: "Code2",
+    },
+  ],
+  socials: [
+    {
+      name: "Instagram",
+      handle: "@vasu18.exe",
+      url: "https://www.instagram.com/vasu18.exe/",
+      label: "Follow on Instagram",
+      description: "Behind-the-scenes building updates and student developer life.",
+    },
+    {
+      name: "LinkedIn",
+      handle: "Vasudevan M",
+      url: "https://www.linkedin.com/in/vasudevanm18/",
+      label: "Connect on LinkedIn",
+      description: "Professional networking, founder updates, and collaborations.",
+    },
+    {
+      name: "GitHub",
+      handle: "@Vasudevan1202",
+      url: "https://github.com/Vasudevan1202",
+      label: "Follow on GitHub",
+      description: "Open-source repositories, experiments, and codebases.",
+    },
+    {
+      name: "Email",
+      handle: "founder@developerhut.in",
+      url: "mailto:founder@developerhut.in",
+      label: "Send an Email",
+      description: "Direct founder inquiries, school adoption, and partnerships.",
+    },
+    {
+      name: "DeveloperHut",
+      handle: "developerhut.in",
+      url: "https://www.developerhut.in/",
+      label: "Visit DeveloperHut",
+      description: "Explore the official website of DeveloperHut.",
+    },
+  ],
+};
+
 export const FEATURES: FeatureItem[] = [
   {
     id: "offline-coding",

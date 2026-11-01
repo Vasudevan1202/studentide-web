@@ -14,38 +14,38 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export const Hero: React.FC = () => {
   return (
-    <section id="top" className="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+    <section id="top" className="relative pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-20 md:pb-32 overflow-hidden">
       {/* Background Ambient Glow Gradients */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-indigo-600/25 via-cyan-500/15 to-transparent blur-3xl opacity-70 -z-10" 
+        className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] sm:w-[1000px] h-[400px] sm:h-[550px] bg-gradient-to-b from-indigo-600/25 via-cyan-500/15 to-transparent blur-3xl opacity-70 -z-10" 
       />
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute top-1/3 -left-48 w-96 h-96 bg-purple-600/15 blur-3xl rounded-full -z-10" 
+        className="pointer-events-none absolute top-1/3 -left-48 w-72 sm:w-96 h-72 sm:h-96 bg-purple-600/15 blur-3xl rounded-full -z-10" 
       />
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute top-1/2 -right-48 w-96 h-96 bg-cyan-600/15 blur-3xl rounded-full -z-10" 
+        className="pointer-events-none absolute top-1/2 -right-48 w-72 sm:w-96 h-72 sm:h-96 bg-cyan-600/15 blur-3xl rounded-full -z-10" 
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Centered Content */}
         <div className="text-center max-w-4xl mx-auto">
-          {/* Badge: Proudly Built in India */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 shadow-inner mb-6 backdrop-blur-sm">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+          {/* Badge: Proudly Built in India (Responsive wrap on small mobile) */}
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 px-3 sm:px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 shadow-inner mb-6 backdrop-blur-sm max-w-full">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
             <span className="text-xs sm:text-sm font-semibold tracking-wide text-slate-200">
               {SITE_CONFIG.badge}
             </span>
-            <span className="text-slate-500">•</span>
+            <span className="text-slate-500 hidden xs:inline">•</span>
             <span className="text-xs font-medium text-cyan-400">
-              For School Students & Labs
+              For School Students &amp; Labs
             </span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+          {/* Main Headline (Carefully clamped for 320px-1920px) */}
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] sm:leading-[1.1] mb-6 break-words">
             INDIA&apos;S FIRST{" "}
             <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-indigo-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">
               STUDENT-FRIENDLY
@@ -56,24 +56,24 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 font-normal max-w-3xl mx-auto leading-relaxed mb-4">
+          <p className="text-base sm:text-lg lg:text-2xl text-slate-300 font-normal max-w-3xl mx-auto leading-relaxed mb-4 px-1">
             {SITE_CONFIG.description}
           </p>
 
           {/* Tagline */}
-          <div className="inline-block mb-10">
-            <p className="text-base sm:text-lg font-bold tracking-widest uppercase text-cyan-400 bg-cyan-950/40 px-4 py-1 rounded-lg border border-cyan-500/20">
+          <div className="inline-block mb-8 sm:mb-10 max-w-full">
+            <p className="text-sm sm:text-base md:text-lg font-bold tracking-widest uppercase text-cyan-400 bg-cyan-950/40 px-3.5 sm:px-4 py-1.5 rounded-lg border border-cyan-500/20 break-words">
               {SITE_CONFIG.tagline}
             </p>
           </div>
 
-          {/* Call-to-Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          {/* Call-to-Action Buttons (Stack on mobile, row on tablet/desktop) */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 mb-12 sm:mb-16 w-full max-w-md sm:max-w-none mx-auto">
             <a
               href="#download"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-xl shadow-indigo-600/30 hover:shadow-cyan-500/25 transition-all duration-300 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-xl shadow-indigo-600/30 hover:shadow-cyan-500/25 transition-all duration-300 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-h-[48px]"
             >
-              <Download className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
+              <Download className="w-5 h-5 transition-transform group-hover:-translate-y-0.5 shrink-0" />
               <span>Download for Windows</span>
               <span className="text-xs px-2 py-0.5 rounded bg-black/20 text-cyan-200 font-mono">
                 x64
@@ -82,22 +82,22 @@ export const Hero: React.FC = () => {
 
             <a
               href="#features"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 hover:text-white transition-all duration-200 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 rounded-xl text-sm sm:text-base font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 hover:text-white transition-all duration-200 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-h-[48px]"
             >
               <span>Explore Features</span>
-              <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0" />
             </a>
           </div>
 
-          {/* 3 Core Guarantee Badges */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto mb-16 text-left">
+          {/* 3 Core Guarantee Badges (Stacked on phone, 3-col on sm+) */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto mb-12 sm:mb-16 text-left">
             <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
               <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 shrink-0">
                 <Monitor className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-xs text-slate-400 font-medium">Compatibility</p>
-                <p className="text-sm font-semibold text-slate-100">Windows 10 / 11 (64-bit)</p>
+              <div className="min-w-0">
+                <p className="text-xs text-slate-400 font-medium truncate">Compatibility</p>
+                <p className="text-sm font-semibold text-slate-100 truncate">Windows 10 / 11 (64-bit)</p>
               </div>
             </div>
 
@@ -105,9 +105,9 @@ export const Hero: React.FC = () => {
               <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
                 <WifiOff className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-xs text-slate-400 font-medium">Connectivity</p>
-                <p className="text-sm font-semibold text-slate-100">100% Offline-First</p>
+              <div className="min-w-0">
+                <p className="text-xs text-slate-400 font-medium truncate">Connectivity</p>
+                <p className="text-sm font-semibold text-slate-100 truncate">100% Offline-First</p>
               </div>
             </div>
 
@@ -115,9 +115,9 @@ export const Hero: React.FC = () => {
               <div className="p-2 rounded-lg bg-purple-500/10 text-purple-400 shrink-0">
                 <GraduationCap className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-xs text-slate-400 font-medium">Curriculum</p>
-                <p className="text-sm font-semibold text-slate-100">Designed for Classes 6–12</p>
+              <div className="min-w-0">
+                <p className="text-xs text-slate-400 font-medium truncate">Curriculum</p>
+                <p className="text-sm font-semibold text-slate-100 truncate">Designed for Classes 6–12</p>
               </div>
             </div>
           </div>
@@ -131,18 +131,18 @@ export const Hero: React.FC = () => {
           {/* Window Container */}
           <div className="rounded-2xl border border-slate-700/80 bg-[#0B0F19] shadow-2xl overflow-hidden">
             {/* Window Title Bar */}
-            <div className="flex items-center justify-between px-4 py-3 bg-[#10172A] border-b border-slate-800 select-none">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                <span className="ml-3 text-xs font-mono text-slate-400 hidden sm:inline">
-                  Student IDE — [Aarav Sharma • Class 10] — main.py
+            <div className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 bg-[#10172A] border-b border-slate-800 select-none">
+              <div className="flex items-center gap-2 min-w-0">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-rose-500/80 shrink-0" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500/80 shrink-0" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/80 shrink-0" />
+                <span className="ml-2 text-xs font-mono text-slate-400 truncate">
+                  Student IDE — main.py
                 </span>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  ● Offline Engine Ready
+              <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
+                  ● Offline Ready
                 </span>
                 <span className="text-xs text-slate-500 font-mono hidden md:inline">
                   MinGW GCC 14.1 • Python 3.11 • PHP 8.2
@@ -163,15 +163,15 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Bottom Caption Bar */}
-            <div className="flex flex-col sm:flex-row items-center justify-between px-5 py-3 bg-[#0d1322] border-t border-slate-800 text-xs text-slate-400 gap-2">
+            <div className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-5 py-3 bg-[#0d1322] border-t border-slate-800 text-[11px] sm:text-xs text-slate-400 gap-2 text-center sm:text-left">
               <div className="flex items-center gap-2">
-                <Code2 className="w-4 h-4 text-cyan-400" />
-                <span>Monaco Code Editor with Integrated Offline Runners & Real-time Console</span>
+                <Code2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>Monaco Code Editor with Integrated Offline Runners &amp; Real-time Console</span>
               </div>
-              <div className="flex items-center gap-4 text-slate-400">
+              <div className="flex items-center gap-2 sm:gap-4 text-slate-400 flex-wrap justify-center">
                 <span className="text-emerald-400 font-medium">✓ Actual Application Screenshot</span>
                 <span>•</span>
-                <span>DeveloperHut Official Release</span>
+                <span>DeveloperHut Official</span>
               </div>
             </div>
           </div>

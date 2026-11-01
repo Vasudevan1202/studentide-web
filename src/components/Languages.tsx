@@ -33,7 +33,7 @@ export const Languages: React.FC = () => {
         </div>
 
         {/* Language Grid: 7 Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 sm:gap-4 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-2.5 sm:gap-4 mb-12">
           {LANGUAGES.map((lang) => {
             const isSelected = lang.id === selectedLang;
             return (
@@ -41,17 +41,17 @@ export const Languages: React.FC = () => {
                 key={lang.id}
                 type="button"
                 onClick={() => setSelectedLang(lang.id)}
-                className={`p-4 rounded-xl border transition-all duration-200 flex flex-col items-center text-center gap-2.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+                className={`p-3 sm:p-4 rounded-xl border transition-all duration-200 flex flex-col items-center text-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-h-[44px] last:col-span-2 sm:last:col-span-1 ${
                   isSelected
                     ? "bg-[#10172A] border-cyan-400 shadow-lg shadow-cyan-500/10 scale-[1.02]"
                     : "bg-[#0E1526] border-slate-800 hover:border-slate-700 hover:bg-[#121b30]"
                 }`}
               >
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-slate-800/80 border border-slate-700/60 font-mono text-sm font-bold text-white">
+                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-slate-800/80 border border-slate-700/60 font-mono text-xs sm:text-sm font-bold text-white">
                   {lang.extension}
                 </div>
                 <div className="w-full">
-                  <p className="text-sm font-bold text-white truncate">{lang.name}</p>
+                  <p className="text-xs sm:text-sm font-bold text-white truncate">{lang.name}</p>
                   <p className="text-[10px] text-slate-400 font-mono truncate">{lang.version.split(" ")[0]}</p>
                 </div>
                 <span

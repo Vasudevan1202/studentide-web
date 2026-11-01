@@ -133,7 +133,7 @@ export const About: React.FC = () => {
 
               <Link
                 href="/founder"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-cyan-500 hover:bg-cyan-400 text-slate-950 shadow-md shadow-cyan-500/20 transition-all duration-200 flex-shrink-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-cyan-500 hover:bg-cyan-400 text-slate-950 shadow-md shadow-cyan-500/20 transition-all duration-200 shrink-0 min-h-[44px]"
               >
                 <span>Read Founder Story</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -141,18 +141,18 @@ export const About: React.FC = () => {
             </div>
 
             <div className="rounded-2xl bg-gradient-to-r from-indigo-950/40 to-slate-900 border border-indigo-500/20 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-              <div>
+              <div className="min-w-0">
                 <p className="text-xs font-semibold text-slate-400">Founder &amp; Inquiries</p>
                 <a
                   href="mailto:founder@developerhut.in"
-                  className="text-sm font-bold text-cyan-300 hover:text-cyan-200 transition-colors font-mono"
+                  className="text-xs sm:text-sm font-bold text-cyan-300 hover:text-cyan-200 transition-colors font-mono break-all"
                 >
                   founder@developerhut.in
                 </a>
               </div>
               <a
                 href="mailto:founder@developerhut.in"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors shrink-0 min-h-[44px]"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>Contact Founder</span>

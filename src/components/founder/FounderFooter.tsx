@@ -36,10 +36,10 @@ export const FounderFooter: React.FC = () => {
           </div>
 
           {/* Center: Back to Product Link */}
-          <div>
+          <div className="w-full sm:w-auto">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 hover:text-white transition-colors text-xs font-semibold"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 hover:text-white transition-colors text-xs font-semibold min-h-[44px]"
             >
               <ArrowLeft className="w-4 h-4 text-cyan-400" />
               <span>Back to Student IDE Official Website</span>
@@ -47,27 +47,27 @@ export const FounderFooter: React.FC = () => {
           </div>
 
           {/* Right: Quick Links */}
-          <div className="flex flex-wrap items-center gap-6 text-xs">
-            <Link href="/" className="hover:text-cyan-400 transition-colors">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 text-xs">
+            <Link href="/" className="hover:text-cyan-400 transition-colors py-1">
               Home
             </Link>
-            <Link href="/#download" className="hover:text-cyan-400 transition-colors">
+            <Link href="/#download" className="hover:text-cyan-400 transition-colors py-1">
               Download
             </Link>
             <a
               href={FOUNDER_INFO.companyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1 hover:text-white transition-colors py-1"
             >
               <span>DeveloperHut</span>
               <ExternalLink className="w-3 h-3 text-slate-500" />
             </a>
             <a
               href="mailto:founder@developerhut.in"
-              className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors"
+              className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors py-1 break-all"
             >
-              <Mail className="w-3 h-3" />
+              <Mail className="w-3 h-3 shrink-0" />
               <span>founder@developerhut.in</span>
             </a>
           </div>

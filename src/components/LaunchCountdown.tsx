@@ -139,8 +139,8 @@ export const LaunchCountdown: React.FC = () => {
 
           <div className="flex flex-col items-center text-center space-y-6">
             {/* Top Official Launch Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700 shadow-inner">
-              <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
+            <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700 shadow-inner max-w-full text-center">
+              <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-ping shrink-0" />
               <span className="text-xs sm:text-sm font-semibold tracking-wider text-slate-200">
                 {timeData.isLive 
                   ? "OFFICIAL RELEASE v1.0.0 NOW AVAILABLE" 
@@ -150,8 +150,8 @@ export const LaunchCountdown: React.FC = () => {
             </div>
 
             {/* Heading and Subheading */}
-            <div className="space-y-2 max-w-2xl">
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
+            <div className="space-y-2 max-w-2xl px-1">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white uppercase break-words">
                 {timeData.isLive ? (
                   <span className="bg-gradient-to-r from-emerald-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">
                     WE ARE LIVE!
@@ -162,7 +162,7 @@ export const LaunchCountdown: React.FC = () => {
                   </span>
                 )}
               </h2>
-              <p className="text-base sm:text-lg font-medium text-cyan-300">
+              <p className="text-sm sm:text-lg font-medium text-cyan-300 break-words">
                 {timeData.isLive 
                   ? "Student IDE is now officially launched and ready for school classrooms." 
                   : "Student IDE is launching soon."}
@@ -170,8 +170,8 @@ export const LaunchCountdown: React.FC = () => {
             </div>
 
             {/* Main Message & Tagline */}
-            <div className="space-y-2 max-w-2xl pt-1">
-              <p className="text-lg sm:text-xl font-extrabold tracking-wide text-white">
+            <div className="space-y-2 max-w-2xl pt-1 px-1">
+              <p className="text-base sm:text-xl font-extrabold tracking-wide text-white break-words">
                 {SITE_CONFIG.headline}
               </p>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl mx-auto">
@@ -255,50 +255,50 @@ export const LaunchCountdown: React.FC = () => {
                 className="w-full max-w-3xl pt-2 pb-2"
               >
                 {/* 4 Countdown Boxes Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
                   {/* Days */}
-                  <div className="p-4 sm:p-6 rounded-2xl bg-[#0B0F19] border border-slate-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden group">
-                    <div className="text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-white tracking-tight motion-reduce:transition-none transition-all">
+                  <div className="p-3 sm:p-6 rounded-2xl bg-[#0B0F19] border border-slate-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden group">
+                    <div className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-white tracking-tight motion-reduce:transition-none transition-all">
                       {mounted ? timeData.days : "--"}
                     </div>
-                    <span className="text-[11px] sm:text-xs font-bold tracking-widest text-cyan-400 uppercase mt-2">
+                    <span className="text-[10px] sm:text-xs font-bold tracking-widest text-cyan-400 uppercase mt-1.5 sm:mt-2">
                       DAYS
                     </span>
                   </div>
 
                   {/* Hours */}
-                  <div className="p-4 sm:p-6 rounded-2xl bg-[#0B0F19] border border-slate-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden group">
-                    <div className="text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-white tracking-tight motion-reduce:transition-none transition-all">
+                  <div className="p-3 sm:p-6 rounded-2xl bg-[#0B0F19] border border-slate-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden group">
+                    <div className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-white tracking-tight motion-reduce:transition-none transition-all">
                       {mounted ? timeData.hours : "--"}
                     </div>
-                    <span className="text-[11px] sm:text-xs font-bold tracking-widest text-indigo-400 uppercase mt-2">
+                    <span className="text-[10px] sm:text-xs font-bold tracking-widest text-indigo-400 uppercase mt-1.5 sm:mt-2">
                       HOURS
                     </span>
                   </div>
 
                   {/* Minutes */}
-                  <div className="p-4 sm:p-6 rounded-2xl bg-[#0B0F19] border border-slate-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden group">
-                    <div className="text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-white tracking-tight motion-reduce:transition-none transition-all">
+                  <div className="p-3 sm:p-6 rounded-2xl bg-[#0B0F19] border border-slate-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden group">
+                    <div className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-white tracking-tight motion-reduce:transition-none transition-all">
                       {mounted ? timeData.minutes : "--"}
                     </div>
-                    <span className="text-[11px] sm:text-xs font-bold tracking-widest text-purple-400 uppercase mt-2">
+                    <span className="text-[10px] sm:text-xs font-bold tracking-widest text-purple-400 uppercase mt-1.5 sm:mt-2">
                       MINUTES
                     </span>
                   </div>
 
                   {/* Seconds */}
-                  <div className="p-4 sm:p-6 rounded-2xl bg-[#0B0F19] border border-slate-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden group">
-                    <div className="text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-cyan-300 tracking-tight motion-reduce:transition-none transition-all">
+                  <div className="p-3 sm:p-6 rounded-2xl bg-[#0B0F19] border border-slate-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden group">
+                    <div className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-cyan-300 tracking-tight motion-reduce:transition-none transition-all">
                       {mounted ? timeData.seconds : "--"}
                     </div>
-                    <span className="text-[11px] sm:text-xs font-bold tracking-widest text-emerald-400 uppercase mt-2">
+                    <span className="text-[10px] sm:text-xs font-bold tracking-widest text-emerald-400 uppercase mt-1.5 sm:mt-2">
                       SECONDS
                     </span>
                   </div>
                 </div>
 
                 {/* Example Display String as specified */}
-                <p className="text-xs font-mono text-slate-400 text-center mt-4">
+                <p className="text-[10px] sm:text-xs font-mono text-slate-400 text-center mt-4 break-words px-2">
                   {mounted ? `${timeData.days} DAYS : ${timeData.hours} HOURS : ${timeData.minutes} MINUTES : ${timeData.seconds} SECONDS` : "CALCULATING REMAINING TIME..."}
                 </p>
 

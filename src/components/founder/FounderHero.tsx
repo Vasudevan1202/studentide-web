@@ -24,10 +24,10 @@ export const FounderHero: React.FC = () => {
 
             {/* Founder Display Name & Full Name */}
             <div className="space-y-2">
-              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none uppercase">
+              <h1 className="text-4xl sm:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none uppercase break-words">
                 {FOUNDER_INFO.displayName}
               </h1>
-              <p className="text-lg sm:text-xl font-medium text-slate-300">
+              <p className="text-base sm:text-xl font-medium text-slate-300 break-words">
                 {FOUNDER_INFO.fullName} &bull;{" "}
                 <span className="text-cyan-400 font-semibold">{FOUNDER_INFO.role}</span> &bull;{" "}
                 <span className="text-indigo-300">{FOUNDER_INFO.product}</span>
@@ -35,9 +35,9 @@ export const FounderHero: React.FC = () => {
             </div>
 
             {/* Education Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 text-xs sm:text-sm font-medium shadow-sm">
-              <GraduationCap className="w-4 h-4 text-cyan-400" />
-              <span>{FOUNDER_INFO.education}</span>
+            <div className="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 text-xs sm:text-sm font-medium shadow-sm max-w-full">
+              <GraduationCap className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span className="break-words">{FOUNDER_INFO.education}</span>
             </div>
 
             {/* Main Identity Banner */}
@@ -45,7 +45,7 @@ export const FounderHero: React.FC = () => {
               <p className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-indigo-400/90 uppercase mb-1">
                 Main Identity
               </p>
-              <p className="text-xs sm:text-sm font-bold tracking-wider text-slate-200 uppercase leading-relaxed">
+              <p className="text-xs sm:text-sm font-bold tracking-wider text-slate-200 uppercase leading-relaxed break-words">
                 STUDENT DEVELOPER &bull; ENTREPRENEUR &bull; TECHNOLOGY ENTHUSIAST &bull; FOUNDER OF DEVELOPERHUT &bull; CREATOR OF STUDENT IDE
               </p>
             </div>
@@ -56,10 +56,10 @@ export const FounderHero: React.FC = () => {
             </p>
 
             {/* Call-to-Action Group */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 w-full max-w-md sm:max-w-none">
               <a
                 href="#story"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-lg shadow-indigo-600/30 hover:shadow-cyan-500/25 transition-all duration-200 active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-lg shadow-indigo-600/30 hover:shadow-cyan-500/25 transition-all duration-200 active:scale-95 min-h-[44px]"
               >
                 <span>Read Story</span>
                 <ArrowDown className="w-4 h-4" />
@@ -67,7 +67,7 @@ export const FounderHero: React.FC = () => {
 
               <a
                 href="#connect"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 transition-colors duration-200 active:scale-95 shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 transition-colors duration-200 active:scale-95 shadow-sm min-h-[44px]"
               >
                 <Send className="w-4 h-4 text-cyan-400" />
                 <span>Let&apos;s Connect</span>
@@ -77,7 +77,7 @@ export const FounderHero: React.FC = () => {
                 href={FOUNDER_INFO.companyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-3.5 rounded-xl text-xs sm:text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-xl text-xs sm:text-sm font-medium text-slate-400 hover:text-white transition-colors min-h-[44px]"
               >
                 <span>Visit DeveloperHut</span>
                 <ExternalLink className="w-3.5 h-3.5 text-slate-500" />

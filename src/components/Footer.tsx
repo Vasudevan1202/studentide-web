@@ -159,9 +159,9 @@ export const Footer: React.FC = () => {
               </p>
               <a
                 href="mailto:founder@developerhut.in"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 hover:text-cyan-300 text-xs font-mono transition-colors"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 hover:text-cyan-300 text-xs font-mono transition-colors break-all max-w-full"
               >
-                <Mail className="w-3.5 h-3.5" />
+                <Mail className="w-3.5 h-3.5 shrink-0" />
                 <span>founder@developerhut.in</span>
               </a>
               <p className="text-[11px] text-slate-400">

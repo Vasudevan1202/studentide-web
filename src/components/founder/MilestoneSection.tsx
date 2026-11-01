@@ -26,11 +26,11 @@ export const MilestoneSection: React.FC = () => {
 
           {/* Headline & Tagline */}
           <div className="space-y-4 max-w-3xl">
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight break-words">
               {SITE_CONFIG.headline}
             </h2>
 
-            <p className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-300 to-white tracking-wider">
+            <p className="text-lg sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-300 to-white tracking-wider break-words">
               {SITE_CONFIG.tagline}
             </p>
 
@@ -73,15 +73,15 @@ export const MilestoneSection: React.FC = () => {
           </div>
 
           {/* Action Row */}
-          <div className="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
+          <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-xs text-slate-400">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>Free for students, teachers, and computer laboratories</span>
             </div>
 
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-lg shadow-indigo-600/30 transition-all duration-200 active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-lg shadow-indigo-600/30 transition-all duration-200 active:scale-95 shrink-0 min-h-[44px]"
             >
               <span>Explore Student IDE</span>
               <ArrowRight className="w-4 h-4" />

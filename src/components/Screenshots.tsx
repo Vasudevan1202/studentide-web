@@ -67,24 +67,24 @@ export const Screenshots: React.FC = () => {
         {/* Main Screenshot Showcase Frame */}
         <div className="rounded-2xl border border-slate-700/80 bg-[#0B0F19] shadow-2xl overflow-hidden max-w-5xl mx-auto relative group">
           {/* OS Window Header Bar */}
-          <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 bg-[#10172A] border-b border-slate-800 select-none">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-              <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-              <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-              <span className="ml-3 text-xs font-mono text-slate-300 font-medium">
+          <div className="flex items-center justify-between px-3 sm:px-6 py-3 sm:py-3.5 bg-[#10172A] border-b border-slate-800 select-none">
+            <div className="flex items-center gap-2 min-w-0">
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-rose-500/80 shrink-0" />
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500/80 shrink-0" />
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/80 shrink-0" />
+              <span className="ml-2 sm:ml-3 text-xs font-mono text-slate-300 font-medium truncate max-w-[130px] sm:max-w-none">
                 Student IDE — {current.title}
               </span>
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 hidden sm:inline">
                 {activeTab + 1} of {SCREENSHOTS.length}
               </span>
               <button
                 type="button"
                 onClick={() => setIsZoomed(true)}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-h-[36px]"
                 title="Expand full image"
               >
                 <Maximize2 className="w-3.5 h-3.5" />
@@ -103,11 +103,11 @@ export const Screenshots: React.FC = () => {
               className="object-cover object-top transition-all duration-300"
             />
 
-            {/* Left / Right Arrow Controls */}
+            {/* Left / Right Arrow Controls (Touch-friendly 44px targets) */}
             <button
               type="button"
               onClick={handlePrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-cyan-600 hover:text-white border border-slate-700/80 transition-all opacity-80 group-hover:opacity-100 shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 p-2 sm:p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-cyan-600 hover:text-white border border-slate-700/80 transition-all opacity-80 group-hover:opacity-100 shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Previous screenshot"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -116,7 +116,7 @@ export const Screenshots: React.FC = () => {
             <button
               type="button"
               onClick={handleNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-cyan-600 hover:text-white border border-slate-700/80 transition-all opacity-80 group-hover:opacity-100 shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 p-2 sm:p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-cyan-600 hover:text-white border border-slate-700/80 transition-all opacity-80 group-hover:opacity-100 shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Next screenshot"
             >
               <ChevronRight className="w-5 h-5" />

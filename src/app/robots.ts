@@ -7,6 +7,10 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/'],
     },
-    sitemap: 'https://developerhut.in/sitemap.xml',
+    sitemap: [
+      'https://www.ide.developerhut.in/sitemap.xml',
+      'https://www.ide.developerhut.in/sitemap.txt',
+      'https://developerhut.in/sitemap.xml',
+    ],
   };
 }

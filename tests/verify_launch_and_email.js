@@ -100,19 +100,21 @@ test("Verify automatic transition at or after launch timestamp", () => {
   assert.strictEqual(isLiveAfter, true, "isLive must remain true after launch on reload");
 });
 
-// 5. Configurable download URL and missing URL safety
-test("Verify configurable download URL and missing URL safety handling", () => {
+// 5. Official download URL activation & verified installer state
+test("Verify official download URL activation and removal of mirror synchronization warnings", () => {
+  const constantsPath = path.resolve(__dirname, "../src/lib/constants.ts");
+  const constants = fs.readFileSync(constantsPath, "utf-8");
+  assert(constants.includes("https://github.com/DeveloperHutOrg/student-ide/releases/download/v1.0.0/Student-IDE-Setup-1.0.0-x64.exe"), "Constants must configure direct GitHub installer release URL");
+
   const countdownPath = path.resolve(__dirname, "../src/components/LaunchCountdown.tsx");
   const countdown = fs.readFileSync(countdownPath, "utf-8");
-  assert(countdown.includes("hasDownloadUrl"), "Countdown component must check hasDownloadUrl");
-  assert(countdown.includes("Release Package Mirror Synchronization"), "Countdown component must handle missing download URL with mirror synchronization notice");
   assert(countdown.includes("DOWNLOAD STUDENT IDE"), "CTA must be DOWNLOAD STUDENT IDE when live");
+  assert(!countdown.includes("Release Package Mirror Synchronization"), "Mirror synchronization notice must be removed once asset is active");
 
   const downloadPath = path.resolve(__dirname, "../src/components/Download.tsx");
   const download = fs.readFileSync(downloadPath, "utf-8");
-  assert(download.includes("hasDownloadUrl"), "Download component must check hasDownloadUrl");
   assert(download.includes("DOWNLOAD STUDENT IDE"), "Download button must state DOWNLOAD STUDENT IDE");
-  assert(download.includes("Release Package Mirroring"), "Download component must provide clear fallback notice if URL missing");
+  assert(!download.includes("Release Package Mirroring"), "Mirroring notice must be removed once asset is active");
 });
 
 // 6. Component design tokens & required copy

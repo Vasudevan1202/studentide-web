@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Download, Menu, X, ChevronRight, User } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface NavLinkItem {
   name: string;
@@ -181,7 +182,8 @@ export const Navbar: React.FC = () => {
           {/* Desktop Right Action: Primary CTA */}
           <div className="hidden xl:flex items-center gap-3 shrink-0">
             <a
-              href={isFounderPage ? "/#download" : "#download"}
+              href={SITE_CONFIG.downloadUrl}
+              download
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs 2xl:text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-md shadow-indigo-500/25 hover:shadow-cyan-500/20 transition-all duration-200 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 whitespace-nowrap"
             >
               <Download className="w-4 h-4 shrink-0" />
@@ -278,7 +280,8 @@ export const Navbar: React.FC = () => {
             {/* Mobile Menu Action CTA */}
             <div className="pt-3 border-t border-white/10">
               <a
-                href={isFounderPage ? "/#download" : "#download"}
+                href={SITE_CONFIG.downloadUrl}
+                download
                 onClick={handleLinkClick}
                 className="flex items-center justify-center gap-2.5 w-full py-3.5 px-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-lg shadow-indigo-500/30 active:scale-[0.98] transition-all min-h-[48px]"
               >

@@ -113,7 +113,8 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2 text-xs">
                 <li>
                   <a
-                    href="#download"
+                    href={SITE_CONFIG.downloadUrl}
+                    download
                     className="inline-flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 font-semibold transition-colors"
                   >
                     <Download className="w-3.5 h-3.5" />

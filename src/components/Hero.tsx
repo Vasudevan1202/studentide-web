@@ -70,7 +70,8 @@ export const Hero: React.FC = () => {
           {/* Call-to-Action Buttons (Stack on mobile, row on tablet/desktop) */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 mb-12 sm:mb-16 w-full max-w-md sm:max-w-none mx-auto">
             <a
-              href="#download"
+              href={SITE_CONFIG.downloadUrl}
+              download
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-xl shadow-indigo-600/30 hover:shadow-cyan-500/25 transition-all duration-300 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-h-[48px]"
             >
               <Download className="w-5 h-5 transition-transform group-hover:-translate-y-0.5 shrink-0" />

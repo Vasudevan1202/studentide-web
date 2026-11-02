@@ -6,9 +6,7 @@ import {
   Check, 
   Copy, 
   ShieldCheck, 
-  Info,
-  AlertCircle,
-  Mail
+  Info
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -30,8 +28,6 @@ export const DownloadSection: React.FC = () => {
       clearInterval(timer);
     };
   }, []);
-
-  const hasDownloadUrl = Boolean(SITE_CONFIG.downloadUrl && SITE_CONFIG.downloadUrl.trim().length > 0);
 
   const psCommand = `Get-FileHash -Algorithm SHA256 .\\${SITE_CONFIG.installerFilename}`;
 
@@ -84,43 +80,21 @@ export const DownloadSection: React.FC = () => {
               <span className="text-slate-400">Windows x64</span>
             </div>
 
-            {/* Primary Download Button or Safe Fallback Notice */}
+            {/* Primary Download Button */}
             <div className="w-full max-w-xl">
-              {hasDownloadUrl ? (
-                <div>
-                  <a
-                    href={SITE_CONFIG.downloadUrl}
-                    download
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl text-lg font-black text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-xl shadow-indigo-600/35 hover:shadow-cyan-500/30 transition-all duration-300 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
-                  >
-                    <Download className="w-6 h-6 transition-transform group-hover:-translate-y-1" />
-                    <span>DOWNLOAD STUDENT IDE</span>
-                  </a>
-                  <p className="text-xs text-slate-400 mt-2 font-mono">
-                    {SITE_CONFIG.installerFilename} (~{SITE_CONFIG.installerSize})
-                  </p>
-                </div>
-              ) : (
-                <div className="p-5 rounded-2xl bg-[#0B0F19] border border-amber-500/30 text-left space-y-3">
-                  <div className="flex items-center gap-2 text-amber-300 font-semibold text-xs uppercase tracking-wide">
-                    <AlertCircle className="w-4 h-4 shrink-0 text-amber-400" />
-                    <span>Release Package Mirroring</span>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    The official Windows installer (<code className="text-cyan-300">{SITE_CONFIG.installerFilename}</code>) is being deployed to CDN distribution mirrors for the official launch on <strong>2 November 2026 at 10:00 AM IST</strong>.
-                  </p>
-                  <div className="pt-1 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-t border-slate-800 text-xs">
-                    <span className="text-slate-400">Direct release assistance:</span>
-                    <a
-                      href={`mailto:${SITE_CONFIG.contactEmail}?subject=Student%20IDE%20v1.0.0%20Installer%20Inquiry`}
-                      className="inline-flex items-center gap-1.5 font-bold text-cyan-400 hover:underline"
-                    >
-                      <Mail className="w-3.5 h-3.5" />
-                      <span>{SITE_CONFIG.contactEmail}</span>
-                    </a>
-                  </div>
-                </div>
-              )}
+              <div>
+                <a
+                  href={SITE_CONFIG.downloadUrl}
+                  download
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl text-lg font-black text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-xl shadow-indigo-600/35 hover:shadow-cyan-500/30 transition-all duration-300 active:scale-95 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                >
+                  <Download className="w-6 h-6 transition-transform group-hover:-translate-y-1" />
+                  <span>DOWNLOAD STUDENT IDE</span>
+                </a>
+                <p className="text-xs text-slate-400 mt-2 font-mono">
+                  {SITE_CONFIG.installerFilename} (~{SITE_CONFIG.installerSize})
+                </p>
+              </div>
             </div>
 
             {/* Key Software Specifications Grid */}

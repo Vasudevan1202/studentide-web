@@ -6,8 +6,6 @@ import {
   ArrowRight, 
   Calendar, 
   ExternalLink, 
-  Mail, 
-  AlertCircle, 
   CheckCircle2,
   BellRing
 } from "lucide-react";
@@ -108,8 +106,6 @@ export const LaunchCountdown: React.FC = () => {
     };
   }, []);
 
-  const hasDownloadUrl = Boolean(SITE_CONFIG.downloadUrl && SITE_CONFIG.downloadUrl.trim().length > 0);
-
   return (
     <section 
       id="countdown" 
@@ -196,44 +192,19 @@ export const LaunchCountdown: React.FC = () => {
                     The complete offline IDE bundle featuring Monaco Editor, Python 3.11, C++ MinGW GCC 14.1, and verified PHP 8.2 CLI runtime is now released.
                   </p>
 
-                  {/* Check if real download URL is configured */}
-                  {hasDownloadUrl ? (
-                    <div className="pt-2">
-                      <a
-                        href={SITE_CONFIG.downloadUrl}
-                        download
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-bold text-white bg-gradient-to-r from-emerald-600 via-cyan-600 to-indigo-600 hover:from-emerald-500 hover:to-indigo-500 shadow-xl shadow-cyan-500/25 transition-all duration-300 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
-                      >
-                        <Download className="w-5 h-5" />
-                        <span>DOWNLOAD STUDENT IDE</span>
-                        <span className="text-xs px-2 py-0.5 rounded bg-black/20 text-emerald-200 font-mono">
-                          v1.0.0 (x64)
-                        </span>
-                      </a>
-                    </div>
-                  ) : (
-                    /* Safe fallback message when download URL is pending upload */
-                    <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs text-left flex items-start gap-3">
-                      <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                      <div className="space-y-1">
-                        <p className="font-bold text-white">
-                          Release Package Mirror Synchronization
-                        </p>
-                        <p className="leading-relaxed text-amber-200/90">
-                          The official Windows x64 release asset (<code className="text-cyan-300">Student-IDE-Setup-1.0.0-x64.exe</code>) is undergoing final CDN mirror replication. If download is momentarily unavailable, please contact the founder directly for priority access.
-                        </p>
-                        <div className="pt-2">
-                          <a
-                            href={`mailto:${SITE_CONFIG.contactEmail}?subject=Student%20IDE%20v1.0.0%20Direct%20Download%20Request`}
-                            className="inline-flex items-center gap-1.5 font-bold text-cyan-300 hover:underline"
-                          >
-                            <Mail className="w-3.5 h-3.5" />
-                            <span>Request direct download link ({SITE_CONFIG.contactEmail})</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                  <div className="pt-2">
+                    <a
+                      href={SITE_CONFIG.downloadUrl}
+                      download
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-bold text-white bg-gradient-to-r from-emerald-600 via-cyan-600 to-indigo-600 hover:from-emerald-500 hover:to-indigo-500 shadow-xl shadow-cyan-500/25 transition-all duration-300 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                    >
+                      <Download className="w-5 h-5" />
+                      <span>DOWNLOAD STUDENT IDE</span>
+                      <span className="text-xs px-2 py-0.5 rounded bg-black/20 text-emerald-200 font-mono">
+                        v1.0.0 (x64)
+                      </span>
+                    </a>
+                  </div>
 
                   <div className="pt-2">
                     <a

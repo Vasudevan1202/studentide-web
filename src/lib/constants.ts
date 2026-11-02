@@ -66,7 +66,10 @@ export const SITE_CONFIG = {
   sha256:
     "544ee8da3007b95e46e8df44d46e9575000163f149b2960dae4f4fd78e58bcaa",
   githubRepoUrl: "https://github.com/DeveloperHutOrg/student-ide",
-  downloadUrl: process.env.NEXT_PUBLIC_STUDENT_IDE_DOWNLOAD_URL || process.env.NEXT_PUBLIC_DOWNLOAD_URL || "",
+  downloadUrl:
+    process.env.NEXT_PUBLIC_STUDENT_IDE_DOWNLOAD_URL ||
+    process.env.NEXT_PUBLIC_DOWNLOAD_URL ||
+    "https://github.com/DeveloperHutOrg/student-ide/releases/download/v1.0.0/Student-IDE-Setup-1.0.0-x64.exe",
   requirements: [
     "Windows 10 / Windows 11 (64-bit)",
     "4 GB RAM (8 GB recommended)",

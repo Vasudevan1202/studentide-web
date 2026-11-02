@@ -166,10 +166,36 @@ TOTAL: 5 | PASSED: 5 | FAILED: 0 (100% SUCCESS RATE)
 
 ---
 
-## 6. Next Steps for Site Owner
+## 6. Live Production Verification
+
+Direct HTTP checks were performed against the production deployment:
+
+### 6.1. Domain: `https://ide.developerhut.in/`
+- **HTTP Status:** `200 OK`
+- **HTML `<head>` Inspection:**
+  ```html
+  <meta name="google-site-verification" content="DEDHcCmMFLMR8GiMujSUsxnN9au9CxwPv-q2FcNpkJc"/>
+  ```
+- **HTML File Verification Route:** `https://ide.developerhut.in/google9c7ebd359c2935bd.html`
+  - **HTTP Status:** `200 OK`
+  - **Body Content:** `google-site-verification: google9c7ebd359c2935bd.html`
+
+### 6.2. Domain: `https://studentide-web.vercel.app/`
+- **HTTP Status:** `200 OK`
+- **HTML `<head>` Inspection:**
+  ```html
+  <meta name="google-site-verification" content="DEDHcCmMFLMR8GiMujSUsxnN9au9CxwPv-q2FcNpkJc"/>
+  ```
+- **HTML File Verification Route:** `https://studentide-web.vercel.app/google9c7ebd359c2935bd.html`
+  - **HTTP Status:** `200 OK`
+  - **Body Content:** `google-site-verification: google9c7ebd359c2935bd.html`
+
+---
+
+## 7. Next Steps for Site Owner
 
 1. Navigate to [Google Search Console](https://search.google.com/search-console).
-2. Enter property URL: `https://www.ide.developerhut.in/` (or domain property).
-3. Select **HTML tag** as the verification method.
+2. Enter property URL: `https://ide.developerhut.in/` (or `https://www.ide.developerhut.in/`).
+3. Select **HTML tag** (or **HTML file**) as the verification method.
 4. Click **Verify**.
-5. Google will detect the `<meta name="google-site-verification" content="DEDHcCmMFLMR8GiMujSUsxnN9au9CxwPv-q2FcNpkJc" />` tag in the `<head>` and immediately confirm site ownership.
+5. Google will detect the `<meta name="google-site-verification" content="DEDHcCmMFLMR8GiMujSUsxnN9au9CxwPv-q2FcNpkJc" />` tag in the `<head>` (or the static `google9c7ebd359c2935bd.html` file) and confirm ownership immediately.

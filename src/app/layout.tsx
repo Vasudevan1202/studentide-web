@@ -77,6 +77,9 @@ export const metadata: Metadata = {
     creator: "@DeveloperHut",
     images: ["/branding/icon.png"],
   },
+  verification: {
+    google: "DEDHcCmMFLMR8GiMujSUsxnN9au9CxwPv-q2FcNpkJc",
+  },
   robots: {
     index: true,
     follow: true,

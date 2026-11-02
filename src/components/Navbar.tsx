@@ -77,6 +77,7 @@ export const Navbar: React.FC = () => {
     { name: "Languages", href: isFounderPage ? "/#languages" : "#languages" },
     { name: "Curriculum", href: isFounderPage ? "/#curriculum" : "#curriculum" },
     { name: "Screenshots", href: isFounderPage ? "/#screenshots" : "#screenshots" },
+    { name: "Tutorial", href: isFounderPage ? "/#tutorial" : "#tutorial" },
     { name: "Download", href: isFounderPage ? "/#download" : "#download" },
     { name: "FAQ", href: isFounderPage ? "/#faq" : "#faq" },
     { name: "About", href: isFounderPage ? "/#about" : "#about" },

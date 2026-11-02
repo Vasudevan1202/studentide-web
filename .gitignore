@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# root media source (production asset served from public/videos/)
+/DeveloperHut_Student_IDE_Tutorial_Narrated.mp4

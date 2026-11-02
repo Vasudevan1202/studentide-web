@@ -6,6 +6,7 @@ import { Features } from "@/components/Features";
 import { Languages } from "@/components/Languages";
 import { Curriculum } from "@/components/Curriculum";
 import { Screenshots } from "@/components/Screenshots";
+import { Tutorial } from "@/components/Tutorial";
 import { DownloadSection } from "@/components/Download";
 import { FAQ } from "@/components/FAQ";
 import { About } from "@/components/About";
@@ -37,7 +38,10 @@ export default function HomePage() {
         {/* 6. Real Screenshots Showcase */}
         <Screenshots />
 
-        {/* 7. Download & Installation Instructions */}
+        {/* 7. Watch & Learn: Official Video Tutorial */}
+        <Tutorial />
+
+        {/* 8. Download & Installation Instructions */}
         <DownloadSection />
 
         {/* 8. Frequently Asked Questions */}
